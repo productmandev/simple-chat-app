@@ -1,0 +1,33 @@
+.friend-list-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: lightgoldenrodyellow;
+}
+
+.header-wrapper {
+  text-align: left;
+  padding: 20px 10px;
+  border-bottom: 1px solid gray;
+  border-radius: 4px 4px 0 0;
+  background-color: lightgrey;
+}
+
+.friend-list-wrapper {
+  border-radius: 4px;
+}
+
+.list-item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  .avatar-wrapper {
+    width: 50px;
+  }
+
+  &:hover {
+    background-color: darken($color: lightgoldenrodyellow, $amount: 10);
+    cursor: pointer;
+  }
+}

@@ -2,13 +2,8 @@ import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import routeList from "routes";
 
-// import {
-//   AboutPage
-// } from "components";
+import { FriendsPageContainer } from "containers";
 
-import { HomePageContainer } from "containers";
-
-import logo from "./logo.svg";
 import "./App.scss";
 
 class App extends Component {
@@ -16,19 +11,19 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path="/" component={HomePageContainer} />
+          <Route exact path="/" component={FriendsPageContainer} />
 
           {/* <Route exact path={routeList.home.path} 
-            component={HomePageContainer}
+            component={FriendsPageContainer}
           />
 
           <Route path={routeList.about.path}
             component={AboutPage}
           /> */}
 
-          {/* <Route path={routeList.user.path}>
+          <Route path={routeList.user.path}>
             <div>user page</div>
-          </Route> */}
+          </Route>
 
           <Route>
             <div>no match page</div>
