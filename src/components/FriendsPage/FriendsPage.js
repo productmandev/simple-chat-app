@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
 import { BigHead } from '@bigheads/core'
 import "./FriendsPage.scss";
 
@@ -19,14 +18,6 @@ class FriendsPage extends Component {
         "Checo"
       ]
     };
-  }
-
-  componentDidMount() {
-    this.props.getGithubUser("milkers");
-  }
-
-  handleFriendClick = (friend) => {
-
   }
 
   renderFriendsList = () => {
