@@ -77,7 +77,9 @@ class MessagePage extends Component {
     return (
       <div className="page message-page">
         {this.renderMessagePageHeader()}
-        {this.renderMessageList()}
+        <div className="message-list-overflow">
+          {this.renderMessageList()}
+        </div>
         <div className="message-input-wrapper">
           <Form onSubmit={this.handleMessageSubmit}>
             <Form.Input
