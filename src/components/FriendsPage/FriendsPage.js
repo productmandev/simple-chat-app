@@ -25,8 +25,8 @@ class FriendsPage extends Component {
 
     return friendList.map((friend, idx) => {
       return (
-        <Link to={friend}>
-          <div className="list-item" key={`${friend}-${idx}`}>
+        <Link to={friend} key={`${friend}-${idx}`}>
+          <div className="list-item" >
             <div className="avatar-wrapper">
               <BigHead />
             </div>

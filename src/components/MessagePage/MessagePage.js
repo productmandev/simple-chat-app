@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Button, Input, Form } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
 import "./MessagePage.scss";
 
 class MessagePage extends Component {
   constructor(props) {
     super(props);
+    const { params } = props.match;
 
     this.state = {
-      messages: [],
+      messages: props.messages.messageList[params.userName] || [],
       messageText: "",
     };
   }
@@ -41,6 +41,7 @@ class MessagePage extends Component {
   };
 
   handleMessageSubmit = (e, data) => {
+    const { params } = this.props.match;
     const { messages, messageText } = this.state;
     // console.log("onSubmit; e, data, messageText: ", e, data, messageText);
 
@@ -51,10 +52,14 @@ class MessagePage extends Component {
     const newMessages = [...messages];
     newMessages.push(messageText);
 
+    // store newMessages in store.
+    this.props.saveUserMessages(params.userName, newMessages);
+
     this.setState({
       messages: newMessages,
       messageText: "",
     });
+
   };
 
   renderMessageList = () => {
